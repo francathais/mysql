@@ -25,3 +25,14 @@ INSERT INTO clientes (nome, email) VALUES ('Maria Oliveira', 'maria@email.com');
 -- Inserir dados na tabela 'produtos'
 INSERT INTO produtos (nome_produto, preco) VALUES ('Suco de Laranja', 5.99);
 INSERT INTO produtos (nome_produto, preco) VALUES ('Suco de Morango', 6.99);
+
+-- consulta estruturada
+
+SELECT
+    nome,
+    email
+FROM
+    clientes
+WHERE
+    nome = 'João Silva';
+
