@@ -1,6 +1,8 @@
 -- Criar o banco de dados
 CREATE DATABASE IF NOT EXISTS NOSSAS_VENDAS;
 
+--DATABASE | SCHEMA são sinônimos 
+
 -- Selecionar o banco de dados
 USE NOSSAS_VENDAS;
 
