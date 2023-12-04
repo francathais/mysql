@@ -1,30 +1,60 @@
 -- Criar o banco de dados
-CREATE DATABASE IF NOT EXISTS SUCOS_VENDAS;
+CREATE DATABASE IF NOT EXISTS NOSSAS_VENDAS;
 
 -- Selecionar o banco de dados
-USE SUCOS_VENDAS;
+USE NOSSAS_VENDAS;
 
--- Criar a tabela 'clientes'
-CREATE TABLE clientes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(50),
-    email VARCHAR(50)
+--exemplo de como criar as tabelas
+
+--A tabela real que eu preciso deve ter CPF, código de identificação do cliente; Nome completo de cada cliente; 
+--Endereço, um campo que será decomposto quando armazenado na base de dados; 
+--Data de nascimento; 
+--Idade; 
+--Sexo; 
+--Limite de crédito;
+--Limite mínimo de compra do produto; 
+--Por fim, se o cliente já realizou alguma compra; isso informa se ele é um cliente novo ou antigo na empresa.
+
+--Em MySQL
+
+-- Criar a tabela 'TABELA DE CLIENTES'
+CREATE TABLE `TABELA DE CLIENTES` (
+    CPF VARCHAR(11),
+    `Nome completo` VARCHAR(50),
+    `Endereço completo` VARCHAR(50),
+    `Data de nascimento` DATE,
+    Idade INT,
+    Sexo VARCHAR(1), --UMA LETRA PARA CADA GÊNERO
+    `Limite de crédito` VARCHAR(50),
+    `Volume mínimo de compra de produto` VARCHAR(50),
+    `Se já realizou alguma compra na empresa` VARCHAR(50)
 );
 
--- Criar a tabela 'produtos'
-CREATE TABLE produtos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome_produto VARCHAR(50),
-    preco DECIMAL(10, 2)
-);
+--Em SQL Server
+CREATE TABLE [TABELA DE CLIENTES](
 
--- Inserir dados na tabela 'clientes'
-INSERT INTO clientes (nome, email) VALUES ('João Silva', 'joao@email.com');
-INSERT INTO clientes (nome, email) VALUES ('Maria Oliveira', 'maria@email.com');
+[CPF] [CHAR] (11),
+[NOME] [VARCHAR] (150),
+[RUA] [VARCHAR] (150),
+[COMPLEMENTO] [VARCHAR] (150),
+[BAIRRO] [VARCHAR] (150),
+[ESTADO] [CHAR] (2),
+[CEP] [CHAR] (8),
+[DATA DE NASCIMENTO] [DATE],
+[IDADE] [SMALLINT],
+[SEXO] [CHAR] (1),
 
--- Inserir dados na tabela 'produtos'
-INSERT INTO produtos (nome_produto, preco) VALUES ('Suco de Laranja', 5.99);
-INSERT INTO produtos (nome_produto, preco) VALUES ('Suco de Morango', 6.99);
+)
+
+-- Exibir todos os registros da tabela 'TABELA DE CLIENTES'
+SELECT * FROM `TABELA DE CLIENTES`;
+
+-- Inserir dados na tabela 'TABELA DE CLIENTES'
+INSERT INTO `TABELA DE CLIENTES` (`Nome completo`, CPF) VALUES ('João Silva', '00000000000');
+INSERT INTO `TABELA DE CLIENTES` (`Nome completo`, CPF) VALUES ('Maria Oliveira', '11111111111');
+
+
+
 
 -- Consulta estruturada
 SELECT
@@ -38,4 +68,4 @@ WHERE
 -- Drop do banco de dados (use com cuidado)
 -- O comando DROP DATABASE IF EXISTS SUCOS_VENDAS; é adicionado ao final do script para remover o banco de dados. 
 -- O IF EXISTS é usado para garantir que o comando só seja executado se o banco de dados existir. 
-DROP DATABASE IF EXISTS SUCOS_VENDAS;
+DROP DATABASE IF EXISTS NOSSAS_VENDAS;
